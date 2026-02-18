@@ -1,10 +1,12 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component,signal } from '@angular/core';
+import { OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { initFlowbite } from 'flowbite';
+import { Sidebar } from "./page/sidebar/sidebar";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, Sidebar],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
