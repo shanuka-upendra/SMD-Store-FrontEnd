@@ -5,6 +5,7 @@ import { Item } from './page/item/item';
 import { Order } from './page/order/order';
 import { Login } from './page/login/login';
 import { DashboardHome } from './page/dashboard-home/dashboard-home';
+import { Home } from './page/home/home';
 
 export const routes: Routes = [
     {
@@ -32,5 +33,9 @@ export const routes: Routes = [
     {
         path:"login",
         component:Login
+    },
+    {
+        path:"",
+        component:Home,
     }
 ];

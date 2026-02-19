@@ -1,0 +1,58 @@
+/* Dashboard Styles */
+:host {
+  display: block;
+}
+
+/* Card Hover Effects */
+.border-l-4 {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.border-l-4:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Table Styles */
+table tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+table tbody tr:hover {
+  background-color: rgba(59, 130, 246, 0.05);
+}
+
+/* Alert Box Styling */
+.bg-red-50 {
+  background-color: #fef2f2;
+}
+
+.border-red-200 {
+  border-color: #fecaca;
+}
+
+/* Gradient Headers */
+.bg-gradient-to-r {
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+}
+
+/* Button Transitions */
+button {
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+/* Icon Colors */
+svg {
+  display: block;
+}
+
+/* Responsive Grid */
+@media (max-width: 1024px) {
+  .lg\:col-span-2 {
+    grid-column: auto;
+  }
+}

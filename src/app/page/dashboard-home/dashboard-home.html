@@ -1,5 +1,104 @@
 <div class="p-4 sm:ml-64">
-   <div class="p-4 border-1 border-default border-dashed rounded-base">
-   <div><h1 style="color: black;">Hello - Dashboard</h1></div>
-   </div>
+    <div class="p-6 bg-gray-50 min-h-screen">
+        <div class="p-4 sm:ml-64">
+            <div class="p-4 rounded-lg">
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div
+                        class="flex items-center justify-between p-6 bg-white border border-gray-200 rounded-xl shadow-sm">
+                        <div>
+                            <p class="text-sm font-medium text-gray-500 uppercase">Daily Sales</p>
+                            <h5 class="text-2xl font-bold text-gray-900">Rs. 42,500</h5>
+                            <p class="text-xs text-green-500 mt-1 font-bold"><i class="fas fa-arrow-up"></i> 12% from
+                                yesterday</p>
+                        </div>
+                        <div class="p-3 bg-green-100 rounded-full text-green-600">
+                            <i class="fas fa-wallet fa-2x"></i>
+                        </div>
+                    </div>
+                    <div
+                        class="flex items-center justify-between p-6 bg-white border border-gray-200 rounded-xl shadow-sm">
+                        <div>
+                            <p class="text-sm font-medium text-gray-500 uppercase">Active Items</p>
+                            <h5 class="text-2xl font-bold text-gray-900">1,240</h5>
+                            <p class="text-xs text-purple-500 mt-1 font-bold">In Stock</p>
+                        </div>
+                        <div class="p-3 bg-purple-100 rounded-full text-purple-600">
+                            <i class="fas fa-boxes fa-2x"></i>
+                        </div>
+                    </div>
+                    <div
+                        class="flex items-center justify-between p-6 bg-white border border-gray-200 rounded-xl shadow-sm">
+                        <div>
+                            <p class="text-sm font-medium text-gray-500 uppercase">Total Customers</p>
+                            <h5 class="text-2xl font-bold text-gray-900">842</h5>
+                            <p class="text-xs text-blue-500 mt-1 font-bold">Registered</p>
+                        </div>
+                        <div class="p-3 bg-blue-100 rounded-full text-blue-600">
+                            <i class="fas fa-user-friends fa-2x"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="text-xl font-bold text-gray-800 mb-6">Quick Actions</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <a href="customer.html"
+                        class="group block p-6 bg-white border border-gray-200 rounded-xl shadow-sm hover:border-blue-500 transition-all">
+                        <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600">Customer Management</h3>
+                        <p class="text-sm text-gray-500 mt-1">Add new buyers or update their profiles.</p>
+                        <div class="mt-4 text-blue-600 text-sm font-bold uppercase flex items-center">
+                            Go to Registry <i class="fas fa-chevron-right ml-2 group-hover:ml-4 transition-all"></i>
+                        </div>
+                    </a>
+
+                    <a href="item.html"
+                        class="group block p-6 bg-white border border-gray-200 rounded-xl shadow-sm hover:border-purple-500 transition-all">
+                        <h3 class="text-lg font-bold text-gray-900 group-hover:text-purple-600">Stock Inventory</h3>
+                        <p class="text-sm text-gray-500 mt-1">Manage product list, pricing and stock levels.</p>
+                        <div class="mt-4 text-purple-600 text-sm font-bold uppercase flex items-center">
+                            Open Inventory <i class="fas fa-chevron-right ml-2 group-hover:ml-4 transition-all"></i>
+                        </div>
+                    </a>
+
+                    <a href="orders.html"
+                        class="group block p-6 bg-white border border-gray-200 rounded-xl shadow-sm hover:border-green-500 transition-all">
+                        <h3 class="text-lg font-bold text-gray-900 group-hover:text-green-600">New Transaction</h3>
+                        <p class="text-sm text-gray-500 mt-1">Process a new order and generate invoices.</p>
+                        <div class="mt-4 text-green-600 text-sm font-bold uppercase flex items-center">
+                            Create Order <i class="fas fa-chevron-right ml-2 group-hover:ml-4 transition-all"></i>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="mt-10 bg-white border border-gray-200 rounded-xl shadow-sm">
+                    <div class="p-6 border-b border-gray-100 flex justify-between items-center">
+                        <h3 class="font-bold text-gray-800">Recent Transactions</h3>
+                        <span
+                            class="text-xs bg-gray-100 px-2 py-1 rounded font-bold text-gray-500 uppercase tracking-widest">Live
+                            View</span>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm text-left text-gray-500">
+                            <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+                                <tr>
+                                    <th class="px-6 py-3">Order ID</th>
+                                    <th class="px-6 py-3">Customer</th>
+                                    <th class="px-6 py-3">Date</th>
+                                    <th class="px-6 py-3">Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-100">
+                                <tr>
+                                    <td class="px-6 py-4 font-bold">ORD-5542</td>
+                                    <td class="px-6 py-4">John Doe</td>
+                                    <td class="px-6 py-4">Feb 18, 2026</td>
+                                    <td class="px-6 py-4 font-bold text-gray-900">Rs. 1,700.00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

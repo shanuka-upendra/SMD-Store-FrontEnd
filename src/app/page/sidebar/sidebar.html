@@ -8,6 +8,9 @@
 
 <aside id="default-sidebar" class="fixed top-0 left-0 z-40 w-64 h-full transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
    <div class="h-full px-3 py-4 overflow-y-auto bg-neutral-primary-soft border-e border-default">
+      <div class="sidebar-header flex items-center px-2 py-3">
+         <span class="sidebar-title text-heading">SMD Store</span>
+      </div>
       <ul class="space-y-2 font-medium">
          <li>
             <a routerLink="/dashboard" class="flex items-center px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group">
@@ -44,8 +47,4 @@
       </ul>
    </div>
 </aside>
-
-<div>
-    <router-outlet></router-outlet>
-</div>
 

@@ -1,5 +1,127 @@
 <div class="p-4 sm:ml-64">
-   <div class="p-4 border-1 border-default border-dashed rounded-base">
-   <div><h1 style="color: black;">Hello - Customer</h1></div>
-   </div>
+    <div class="p-4 border-1 border-default border-dashed rounded-base">
+        <div>
+            <h1 style="color: black;">Hello - Customer</h1>
+        </div>
+
+        <body class="bg-gray-50 p-8">
+            <div class="max-w-7xl mx-auto">
+                <h1 class="text-3xl font-bold text-gray-800 mb-8 border-l-4 border-blue-600 pl-4">Customer Registry</h1>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                    <div class="lg:col-span-4 bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+                        <h2 class="text-lg font-semibold mb-4 text-blue-600">Manage Customer</h2>
+                        <form action="#" method="POST" class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">Customer ID</label>
+                                <input type="text" name="custID"
+                                    class="mt-1 block w-full rounded-lg border-gray-300 bg-gray-50 p-2.5 text-sm focus:ring-blue-500"
+                                    placeholder="Enter Your Customer - (C001)" required>
+                            </div>
+                            <div class="grid grid-cols-3 gap-2">
+                                <div class="col-span-1">
+                                    <label class="block text-sm font-medium text-gray-700">Title</label>
+                                    <select name="title"
+                                        class="mt-1 block w-full rounded-lg border-gray-300 bg-gray-50 p-2.5 text-sm">
+                                        <option>Mr.</option>
+                                        <option>Mrs.</option>
+                                        <option>Ms.</option>
+                                    </select>
+                                </div>
+                                <div class="col-span-2">
+                                    <label class="block text-sm font-medium text-gray-700">Name</label>
+                                    <input type="text" name="name" placeholder="Enter Your Name"
+                                        class="mt-1 block w-full rounded-lg border-gray-300 bg-gray-50 p-2.5 text-sm"
+                                        required>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700">DOB</label>
+                                    <input type="date" name="dob"
+                                        class="mt-1 block w-full rounded-lg border-gray-300 bg-gray-50 p-2.5 text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700">Salary</label>
+                                    <input type="number" step="0.01" name="salary"
+                                        class="mt-1 block w-full rounded-lg border-gray-300 bg-gray-50 p-2.5 text-sm"
+                                        required>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">Address</label>
+                                <input type="text" name="address" placeholder="Enter street address"
+                                    class="mt-1 block w-full rounded-lg border-gray-300 bg-gray-50 p-2.5 text-sm">
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">City</label>
+                                <input type="text" name="city" placeholder="Enter city"
+                                    class="mt-1 block w-full rounded-lg border-gray-300 bg-gray-50 p-2.5 text-sm">
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700">Province</label>
+                                    <input type="text" step="0.01" name="province" placeholder="Enter your province"
+                                        class="mt-1 block w-full rounded-lg border-gray-300 bg-gray-50 p-2.5 text-sm"
+                                        required>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700">Postal Code</label>
+                                    <input type="text" step="0.01" name="postalcode" placeholder="Enter postal code"
+                                        class="mt-1 block w-full rounded-lg border-gray-300 bg-gray-50 p-2.5 text-sm"
+                                        required>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <button type="submit"
+                                    class="w-full text-white bg-blue-600 hover:bg-blue-700 font-medium rounded-lg text-sm px-5 py-2.5">Save
+                                    / Add</button>
+                                <button type="submit"
+                                    class="w-full text-white bg-green-500 hover:bg-green-600 font-medium rounded-lg text-sm px-5 py-2.5">Update</button>
+                            </div>
+                            <button type="submit"
+                                class="w-full text-red-600 bg-red-50 hover:bg-red-100 border border-red-200 font-medium rounded-lg text-sm px-5 py-2.5">Delete
+                                Customer</button>
+                        </form>
+                    </div>
+
+                    <div class="lg:col-span-8 overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+                        <table class="w-full text-sm text-left text-gray-500 bg-white">
+                            <thead class="text-xs text-gray-700 uppercase bg-gray-50 border-b">
+                                <tr>
+                                    <th class="px-6 py-4">ID</th>
+                                    <th class="px-6 py-4">Name</th>
+                                    <th class="px-6 py-4">City</th>
+                                    <th class="px-6 py-4">Salary</th>
+                                    <th class="px-6 py-4">Action</th>
+                                    <th class="px-6 py-4"><input type="text" name="searchCustomer"
+                                            placeholder="Search Customer"
+                                            class="mt-1 block w-full rounded-lg border-gray-300 bg-gray-50 p-2.5 text-sm focus:border-blue-500 focus:ring-blue-500"
+                                            placeholder="Search customers...">
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-100">
+                                <tr *ngFor="let customer of customerList index as i"
+                                    class="hover:bg-blue-50 transition-colors">
+                                    <td class="px-6 py-4 font-bold text-gray-900">{{i+1}}</td>
+                                    <td class="px-6 py-4 font-bold text-gray-900">{{customer.id}}</td>
+                                    <td class="px-6 py-4">{{customer.name}}</td>
+                                    <td class="px-6 py-4">{{customer.address}}</td>
+                                    <td class="px-6 py-4 font-mono text-green-600">{{customer.salary}}</td>
+                                    <td class="px-6 py-4 text-center">
+                                        <a href="#" class="text-blue-600 font-medium hover:underline">Update</a>
+                                    </td>
+                                    <td class="px-6 py-4 text-center">
+                                        <a href="#" class="text-red-600 font-medium hover:underline">Delete</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </body>
+    </div>
 </div>
