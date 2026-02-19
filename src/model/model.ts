@@ -11,5 +11,9 @@ export interface CustomerModel {
 }
 
 export interface ItemModel {
-
+    itemCode:string;
+    description:string;
+    packSize:string;
+    price:number;
+    qty:number;
 }

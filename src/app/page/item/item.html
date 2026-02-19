@@ -12,41 +12,41 @@
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
                     <div class="lg:col-span-4 bg-white p-6 rounded-xl shadow-sm border border-gray-200 h-fit">
                         <h2 class="text-lg font-semibold mb-4 text-purple-600">Item Details</h2>
-                        <form action="#" method="POST" class="space-y-4">
+                        <div class="space-y-4">
                             <div>
                                 <label class="block text-sm font-medium text-gray-700">Item Code</label>
-                                <input type="text"
+                                <input type="text" [(ngModel)]="itemObj.itemCode"
                                     class="mt-1 block w-full rounded-lg border-gray-300 bg-gray-50 p-2.5 text-sm"
                                     placeholder="I00-001" required>
                             </div>
                             <div>
                                 <label class="block text-sm font-medium text-gray-700">Description</label>
-                                <textarea rows="3"
+                                <textarea rows="3" [(ngModel)]="itemObj.description"
                                     class="mt-1 block w-full rounded-lg border-gray-300 bg-gray-50 p-2.5 text-sm"
                                     required></textarea>
                             </div>
                             <div class="grid grid-cols-2 gap-4">
                                 <div>
                                     <label class="block text-sm font-medium text-gray-700">Pack Size</label>
-                                    <input type="text"
+                                    <input type="text" [(ngModel)]="itemObj.packSize"
                                         class="mt-1 block w-full rounded-lg border-gray-300 bg-gray-50 p-2.5 text-sm"
                                         placeholder="500g">
                                 </div>
                                 <div>
                                     <label class="block text-sm font-medium text-gray-700">Unit Price</label>
-                                    <input type="number" step="0.01"
+                                    <input type="number" step="0.01" [(ngModel)]="itemObj.price"
                                         class="mt-1 block w-full rounded-lg border-gray-300 bg-gray-50 p-2.5 text-sm"
                                         required>
                                 </div>
                             </div>
                             <div>
                                 <label class="block text-sm font-medium text-gray-700">Qty On Hand</label>
-                                <input type="number"
+                                <input type="number" [(ngModel)]="itemObj.qty"
                                     class="mt-1 block w-full rounded-lg border-gray-300 bg-gray-50 p-2.5 text-sm"
                                     required>
                             </div>
                             <div class="grid grid-cols-2 gap-4 pt-2">
-                                <button type="submit"
+                                <button type="submit" (click)="addItem()"
                                     class="w-full text-white bg-purple-600 hover:bg-purple-700 font-medium rounded-lg text-sm px-5 py-2.5">Add
                                     Item</button>
                                 <button type="submit"
@@ -55,7 +55,7 @@
                             <button type="submit"
                                 class="w-full text-red-600 bg-white border border-red-600 hover:bg-red-50 font-medium rounded-lg text-sm px-5 py-2.5">Delete
                                 Item</button>
-                        </form>
+                        </div>
                     </div>
 
                     <div class="lg:col-span-8 overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
@@ -70,12 +70,12 @@
                                 </tr>
                             </thead>
                             <tbody class="divide-y divide-gray-100">
-                                <tr class="hover:bg-purple-50 transition-colors cursor-pointer">
-                                    <td class="px-6 py-4 font-bold text-gray-900">I001</td>
-                                    <td class="px-6 py-4 text-gray-600">Fresh Milk 1L</td>
-                                    <td class="px-6 py-4">Bottle</td>
-                                    <td class="px-6 py-4 text-purple-700 font-bold">450.00</td>
-                                    <td class="px-6 py-4">120</td>
+                                <tr *ngFor="let item of itemList" class="hover:bg-purple-50 transition-colors cursor-pointer">
+                                    <td class="px-6 py-4 font-bold text-gray-900">{{item.itemCode}}</td>
+                                    <td class="px-6 py-4 text-gray-600">{{item.description}}</td>
+                                    <td class="px-6 py-4">{{item.packSize}}</td>
+                                    <td class="px-6 py-4 text-purple-700 font-bold">{{item.price}}</td>
+                                    <td class="px-6 py-4">{{item.qty}}</td>
                                 </tr>
                             </tbody>
                         </table>
