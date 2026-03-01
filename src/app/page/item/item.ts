@@ -54,6 +54,19 @@ export class Item implements OnInit {
     })
   }
 
+  deleteItem(id: string){
+    this.http.delete("http://localhost:8080/item/delete-item/"+id).subscribe(data=>{
+      if (data === true) {
+            Swal.fire({
+              title: "Deleted!",
+              text: "Item "+id+" has been deleted.",
+              icon: "success"
+            });
+            this.getAllItems();
+        }
+    })
+  }
+
 
 
 

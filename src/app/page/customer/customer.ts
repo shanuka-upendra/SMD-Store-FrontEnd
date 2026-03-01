@@ -7,53 +7,70 @@ import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-customer',
-  imports: [NgForOf,FormsModule],
+  imports: [NgForOf, FormsModule],
   templateUrl: './customer.html',
   styleUrl: './customer.css',
 })
 export class Customer implements OnInit {
 
-  customerList:Array<CustomerModel>= [];
+  customerList: Array<CustomerModel> = [];
 
-  customerObj:CustomerModel = {
-    id:'',
-    title:'',
-    name:'',
-    dob:{},
-    salary:0.0,
-    address:'',
-    city:'',
-    province:'',
-    postalCode:''
+  customerObj: CustomerModel = {
+    id: '',
+    title: '',
+    name: '',
+    dob: {},
+    salary: 0.0,
+    address: '',
+    city: '',
+    province: '',
+    postalCode: ''
   };
 
-  constructor(private http:HttpClient, private cdr:ChangeDetectorRef){
+  constructor(private http: HttpClient, private cdr: ChangeDetectorRef) {
     this.getAll()
   }
   ngOnInit(): void {
     this.getAll();
   }
 
-  getAll(){
-    this.http.get<CustomerModel[]>("http://localhost:8080/customer/search-all").subscribe(data=>{
+  getAll() {
+    this.http.get<CustomerModel[]>("http://localhost:8080/customer/search-all").subscribe(data => {
       console.log(data);
-      this.customerList=data;
+      this.customerList = data;
       this.cdr.detectChanges();
     })
   }
 
-  addCustomer():void{
-    this.http.post("http://localhost:8080/customer/add-customer",this.customerObj).subscribe(data=>{
+  addCustomer(): void {
+    this.http.post("http://localhost:8080/customer/add-customer", this.customerObj).subscribe(data => {
       console.log(data);
-      if(data === true){
+      if (data === true) {
         Swal.fire({
-          title: "Good job! "+this.customerObj.name+" saved !",
+          title: "Good job! " + this.customerObj.name + " saved !",
           text: "You clicked the button!",
           icon: "success"
         });
       }
       this.getAll();
     })
+  }
+
+  deleteCustomer(id: string) {
+    this.http.delete("http://localhost:8080/customer/delete-customer/" + id).subscribe(data => {
+      if (data === true) {
+        Swal.fire({
+          title: "Deleted!",
+          text: "Customer " + id + " has been deleted.",
+          icon: "success"
+        });
+        this.getAll();
+      }
+    })
+  }
+
+  delete(): void {
+    alert("ane mnd bn htta");
   }
 
 }
